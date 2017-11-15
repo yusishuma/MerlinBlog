@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>YUSI</title>
+  <title>ElasticSearch+logstash+kibana | YUSI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YUSI">
-<meta property="og:url" content="http://yusishuma.github.io/index.html">
+  <meta name="description" content="elasticserach权威指南中文版 一、配置elastic.yml 外网访问的时候要修改 network.host: 0.0.0.0 或指定访问地址   二、安装IK分词插件 假设读者已经安装好ES，如果没有的话，请参考ElasticSearch入门 —— 集群搭建。安装IK分词需要的资源可以从这里下载，整个安装过程需要三个步骤： 1、获取分词的依赖包 通过git clone https:/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ElasticSearch+logstash+kibana">
+<meta property="og:url" content="http://yusishuma.github.io/2017/11/15/ElasticSearch-logstash-kibana/index.html">
 <meta property="og:site_name" content="YUSI">
+<meta property="og:description" content="elasticserach权威指南中文版 一、配置elastic.yml 外网访问的时候要修改 network.host: 0.0.0.0 或指定访问地址   二、安装IK分词插件 假设读者已经安装好ES，如果没有的话，请参考ElasticSearch入门 —— 集群搭建。安装IK分词需要的资源可以从这里下载，整个安装过程需要三个步骤： 1、获取分词的依赖包 通过git clone https:/">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-11-15T08:17:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YUSI">
+<meta name="twitter:title" content="ElasticSearch+logstash+kibana">
+<meta name="twitter:description" content="elasticserach权威指南中文版 一、配置elastic.yml 外网访问的时候要修改 network.host: 0.0.0.0 或指定访问地址   二、安装IK分词插件 假设读者已经安装好ES，如果没有的话，请参考ElasticSearch入门 —— 集群搭建。安装IK分词需要的资源可以从这里下载，整个安装过程需要三个步骤： 1、获取分词的依赖包 通过git clone https:/">
   
   
     <link rel="icon" href="/favicon.png">
@@ -59,135 +63,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-redis" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/15/redis/" class="article-date">
-  <time datetime="2017-11-15T08:42:18.000Z" itemprop="datePublished">2017-11-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/15/redis/">redis</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="启动redis显示中文"><a href="#启动redis显示中文" class="headerlink" title="启动redis显示中文"></a>启动redis显示中文</h4><pre><code>redis-cli   —raw  编码  十六进制转utf-8
-</code></pre><p><a href="http://www.runoob.com/redis/redis-backup.html" target="_blank" rel="external">文档</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yusishuma.github.io/2017/11/15/redis/" data-id="cja0sx2cw0005tboj5hzgsefx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Gulp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/15/Gulp/" class="article-date">
-  <time datetime="2017-11-15T08:38:00.000Z" itemprop="datePublished">2017-11-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Nodejs/">Nodejs</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/15/Gulp/">Gulp</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装gulp"><a href="#安装gulp" class="headerlink" title="安装gulp"></a>安装gulp</h2><pre><code>npm install —-save gulp
-</code></pre><p>安装好gulp后我们需要告诉它要为我们执行哪些任务，首先，我们自己需要弄清楚项目需要哪些任务。</p>
-<p>1.检查Javascript<br>2.编译Sass（或Less之类的）文件<br>3.合并Javascript<br>4.压缩并重命名合并后的Javascript</p>
-<pre><code>npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev
-</code></pre><p>引入了核心的gulp和其他依赖组件gulpfile.js</p>
-<pre><code>// 引入 gulp
-var gulp = require(&apos;gulp&apos;);
-
-// 引入组件
-var jshint = require(&apos;gulp-jshint&apos;);
-var sass = require(&apos;gulp-sass&apos;);
-var concat = require(&apos;gulp-concat&apos;);
-var uglify = require(&apos;gulp-uglify&apos;);
-var rename = require(&apos;gulp-rename&apos;);
-
-// 检查脚本
-gulp.task(&apos;lint&apos;, function() {
-    gulp.src(&apos;./js/*.js&apos;)
-        .pipe(jshint())
-        .pipe(jshint.reporter(&apos;default&apos;));
-});
-
-// 编译Sass
-gulp.task(&apos;sass&apos;, function() {
-    gulp.src(&apos;./scss/*.scss&apos;)
-        .pipe(sass())
-        .pipe(gulp.dest(&apos;./css&apos;));
-});
-
-// 合并，压缩文件
-gulp.task(&apos;scripts&apos;, function() {
-    gulp.src(&apos;./js/*.js&apos;)
-        .pipe(concat(&apos;all.js&apos;))
-        .pipe(gulp.dest(&apos;./dist&apos;))
-        .pipe(rename(&apos;all.min.js&apos;))
-        .pipe(uglify())
-        .pipe(gulp.dest(&apos;./dist&apos;));
-});
-
-// 默认任务
-gulp.task(&apos;default&apos;, function(){
-    gulp.run(&apos;lint&apos;, &apos;sass&apos;, &apos;scripts&apos;);
-
-    // 监听文件变化
-    gulp.watch(&apos;./js/*.js&apos;, function(){
-        gulp.run(&apos;lint&apos;, &apos;sass&apos;, &apos;scripts&apos;);
-    });
-});
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yusishuma.github.io/2017/11/15/Gulp/" data-id="cja0sx2cy0006tbojs8jv3vds" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ElasticSearch-logstash-kibana" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ElasticSearch-logstash-kibana" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/11/15/ElasticSearch-logstash-kibana/" class="article-date">
   <time datetime="2017-11-15T08:13:17.000Z" itemprop="datePublished">2017-11-15</time>
@@ -200,8 +76,8 @@ gulp.task(&apos;default&apos;, function(){
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/15/ElasticSearch-logstash-kibana/">ElasticSearch+logstash+kibana</a>
+    <h1 class="article-title" itemprop="name">
+      ElasticSearch+logstash+kibana
     </h1>
   
 
@@ -268,81 +144,29 @@ stdout {codec =&gt; rubydebug}
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-读取json文件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/13/读取json文件/" class="article-date">
-  <time datetime="2015-10-13T07:48:00.000Z" itemprop="datePublished">2015-10-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Nodejs/">Nodejs</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2017/11/15/Gulp/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          Gulp
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/13/读取json文件/">读取json文件</a>
-    </h1>
   
+    <a href="/2015/10/13/读取json文件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">读取json文件</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##读取json文件</p>
-<p>Parsing a string containing JSON data</p>
-<pre><code>var str = &apos;{ &quot;name&quot;: &quot;John Doe&quot;, &quot;age&quot;: 42 }&apos;;
-var obj = JSON.parse(str);
-</code></pre><p>Parsing a file containing JSON data</p>
-<p>You’ll have to do some file operations with fs module:</p>
-<pre><code>var fs = require(&apos;fs&apos;);
-</code></pre><p>Then you can read the data asynchronously/synchronously.</p>
-<p>Asynchronous version</p>
-<pre><code>fs.readFile(&apos;/path/to/file.json&apos;, &apos;utf8&apos;, function (err, data) {
-if (err) throw err; // we&apos;ll not consider error handling for now
-var obj = JSON.parse(data);
-});
-</code></pre><p>Synchronous version</p>
-<pre><code>var json = JSON.parse(fs.readFileSync(&apos;/path/to/file.json&apos;, &apos;utf8&apos;));
-</code></pre><p>WARNING</p>
-<p>You can sometimes use require:</p>
-<pre><code>var obj = require(&apos;path/to/file.json&apos;);
-</code></pre><p>But, this is not recommended for several reasons:</p>
-<p>require will read the file only once. Subsequent calls to require for the same file will return a cached copy. Not a good idea if you want to read a .json file that is continuously updated.<br>If your file does not have a .json extension, require will not treat the contents of the file as JSON.<br>JSON is not a true subset of JavaScript. A user provided JSON string could crash your application. Seriously. Use JSON.parse with a try/catch block.<br>jsonfile module</p>
-<p>If you are reading large number of .json files, (and if you are extremely lazy), it becomes annoying to write boilerplate code every time. You can save some characters by using the jsonfile module.</p>
-<pre><code>var jf = require(&apos;jsonfile&apos;);
-
-// asynchronous version
-jf.readFile(&apos;/path/to/file.json&apos;, function(err, obj) {
-  // obj contains JSON data
-});
-
-// synchronous version
-var obj = jf.readFileSync(file);
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yusishuma.github.io/2015/10/13/读取json文件/" data-id="cja0sx2cz0007tbojls04lga6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-  
 </section>
         
           <aside id="sidebar">

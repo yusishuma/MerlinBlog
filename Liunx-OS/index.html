@@ -8,11 +8,11 @@
   <meta name="description" content="vim常用命令插入命令i 在当前位置生前插入  I 在当前行首插入  a 在当前位置后插入  A 在当前行尾插入  o 在当前行之后插入一行  O 在当前行之前插入一行 查找命令/text　　查找text，按n健查找下一个，按N健查找前一个。  ?text　　查找text，反向查找，按n健查找下一个，按N健查找前一个。  vim中有一些特殊字符在查找时需要转义　　.*[]^%/?~$  :set">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Liunx OS">
-<meta property="og:url" content="http://yoursite.com/Liunx-OS/index.html">
+<meta property="og:url" content="http://yusishuma.github.io/Liunx-OS/index.html">
 <meta property="og:site_name" content="YUSI">
 <meta property="og:description" content="vim常用命令插入命令i 在当前位置生前插入  I 在当前行首插入  a 在当前位置后插入  A 在当前行尾插入  o 在当前行之后插入一行  O 在当前行之前插入一行 查找命令/text　　查找text，按n健查找下一个，按N健查找前一个。  ?text　　查找text，反向查找，按n健查找下一个，按N健查找前一个。  vim中有一些特殊字符在查找时需要转义　　.*[]^%/?~$  :set">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-15T04:10:46.000Z">
+<meta property="og:updated_time" content="2017-11-15T08:36:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Liunx OS">
 <meta name="twitter:description" content="vim常用命令插入命令i 在当前位置生前插入  I 在当前行首插入  a 在当前位置后插入  A 在当前行尾插入  o 在当前行之后插入一行  O 在当前行之前插入一行 查找命令/text　　查找text，按n健查找下一个，按N健查找前一个。  ?text　　查找text，反向查找，按n健查找下一个，按N健查找前一个。  vim中有一些特殊字符在查找时需要转义　　.*[]^%/?~$  :set">
@@ -57,7 +57,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yusishuma.github.io"></form>
       </div>
     </div>
   </div>
@@ -161,11 +161,37 @@ dk 删除下一行
     ZONE=”Asia/Shanghai”
     UTC=false
     ARC=false
+</code></pre><h2 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h2><pre><code>sudo fuser -k 3010/tcp 删除 端口号为。。。的服务
+</code></pre><h4 id="ps-命令用于查看当前正在运行的进程。"><a href="#ps-命令用于查看当前正在运行的进程。" class="headerlink" title="ps 命令用于查看当前正在运行的进程。"></a>ps 命令用于查看当前正在运行的进程。</h4><pre><code>grep 是搜索
+例如： ps -ef | grep java
+表示查看所有进程里 CMD 是 java 的进程信息
+ps -aux | grep java
+-aux 显示所有状态
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">netstat -tln</span><br><span class="line">linkin@OpenSuse:~&gt; netstat -tln</span><br><span class="line"></span><br><span class="line">Active Internet connections (only servers)</span><br><span class="line">Proto Recv-Q Send-Q Local Address           Foreign Address         State</span><br><span class="line">tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN</span><br><span class="line">tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN</span><br><span class="line">tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN</span><br><span class="line">tcp        0      0 0.0.0.0:5001            0.0.0.0:*               LISTEN</span><br><span class="line">tcp        0      0 :::111                  :::*                    LISTEN</span><br><span class="line">tcp        0      0 ::1:631                 :::*                    LISTEN</span><br><span class="line">tcp        0      0 ::1:25                  :::*                    LISTEN</span><br><span class="line">tcp        0      0 :::445                  :::*                    LISTEN</span><br><span class="line">tcp        0      0 :::56362                :::*                    LISTEN</span><br><span class="line">tcp        0      0 :::139                  :::*                    LISTEN</span><br></pre></td></tr></table></figure>
+<pre><code>Netstat后面的意思
+
+·Proto显示连接使用的协议。
+·RefCnt表示连接到本套接口上的进程号。
+·Types显示套接口的类型。
+·State显示套接口当前的状态。
+·Path表示连接到套接口的其它进程使用的路径名
+
+Netstat -tln 命令是用来查看linux的端口使用情况，
+
+netstat -a 查看所有的服务端口
+
+netstat -an | grep 端口号 来检验下是不是已经打开了某某端口
+</code></pre><h4 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h4><p>查看本机iptables设置情况</p>
+<pre><code>iptables -L -n
+</code></pre><p>编辑iptables文件</p>
+<pre><code>/etc/sysconfig/iptables
+</code></pre><p>iptables服务器重启</p>
+<pre><code>service iptables restart
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/Liunx-OS/index.html" data-id="cja0rigcm0001fdoj1dv3ib28" class="article-share-link">Share</a>
+      <a data-url="http://yusishuma.github.io/Liunx-OS/index.html" data-id="cja0sx2cm0002tbojmapv7q9v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,6 +206,13 @@ dk 删除下一行
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Nodejs/">Nodejs</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
   
     
   
@@ -189,7 +222,7 @@ dk 删除下一行
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -201,7 +234,19 @@ dk 删除下一行
       <ul>
         
           <li>
-            <a href="/2015/10/13/nodejs版本管理/">nodejs版本管理</a>
+            <a href="/2017/11/15/redis/">redis</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/15/Gulp/">Gulp</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/15/ElasticSearch-logstash-kibana/">ElasticSearch+logstash+kibana</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/13/读取json文件/">读取json文件</a>
           </li>
         
       </ul>

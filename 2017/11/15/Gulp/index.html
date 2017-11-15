@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mac OS | YUSI</title>
+  <title>Gulp | YUSI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="brew &amp;amp;&amp;amp; caskhomebrew 官网是http://brew.sh/ruby -e &amp;quot;$(curl -fsSL &amp;lt;a target=&amp;quot;_blank&amp;quot;&amp;gt;https://raw.github.com/mxcl/homebrew/go&amp;lt;/a&amp;gt;)&amp;quot; caskbrew tap phinze/homebrew-cask">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mac OS">
-<meta property="og:url" content="http://yusishuma.github.io/Mac-OS/index.html">
+  <meta name="description" content="安装gulpnpm install —-save gulp 安装好gulp后我们需要告诉它要为我们执行哪些任务，首先，我们自己需要弄清楚项目需要哪些任务。 1.检查Javascript2.编译Sass（或Less之类的）文件3.合并Javascript4.压缩并重命名合并后的Javascript npm install gulp-jshint gulp-sass gulp-concat gulp-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gulp">
+<meta property="og:url" content="http://yusishuma.github.io/2017/11/15/Gulp/index.html">
 <meta property="og:site_name" content="YUSI">
-<meta property="og:description" content="brew &amp;amp;&amp;amp; caskhomebrew 官网是http://brew.sh/ruby -e &amp;quot;$(curl -fsSL &amp;lt;a target=&amp;quot;_blank&amp;quot;&amp;gt;https://raw.github.com/mxcl/homebrew/go&amp;lt;/a&amp;gt;)&amp;quot; caskbrew tap phinze/homebrew-cask">
+<meta property="og:description" content="安装gulpnpm install —-save gulp 安装好gulp后我们需要告诉它要为我们执行哪些任务，首先，我们自己需要弄清楚项目需要哪些任务。 1.检查Javascript2.编译Sass（或Less之类的）文件3.合并Javascript4.压缩并重命名合并后的Javascript npm install gulp-jshint gulp-sass gulp-concat gulp-">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-15T03:46:33.000Z">
+<meta property="og:updated_time" content="2017-11-15T08:40:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac OS">
-<meta name="twitter:description" content="brew &amp;amp;&amp;amp; caskhomebrew 官网是http://brew.sh/ruby -e &amp;quot;$(curl -fsSL &amp;lt;a target=&amp;quot;_blank&amp;quot;&amp;gt;https://raw.github.com/mxcl/homebrew/go&amp;lt;/a&amp;gt;)&amp;quot; caskbrew tap phinze/homebrew-cask">
+<meta name="twitter:title" content="Gulp">
+<meta name="twitter:description" content="安装gulpnpm install —-save gulp 安装好gulp后我们需要告诉它要为我们执行哪些任务，首先，我们自己需要弄清楚项目需要哪些任务。 1.检查Javascript2.编译Sass（或Less之类的）文件3.合并Javascript4.压缩并重命名合并后的Javascript npm install gulp-jshint gulp-sass gulp-concat gulp-">
   
   
     <link rel="icon" href="/favicon.png">
@@ -63,12 +63,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Gulp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/Mac-OS/index.html" class="article-date">
-  <time datetime="2017-11-15T03:40:58.000Z" itemprop="datePublished">2017-11-15</time>
+    <a href="/2017/11/15/Gulp/" class="article-date">
+  <time datetime="2017-11-15T08:38:00.000Z" itemprop="datePublished">2017-11-15</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Nodejs/">Nodejs</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -77,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Mac OS
+      Gulp
     </h1>
   
 
@@ -85,26 +89,84 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="brew-amp-amp-cask"><a href="#brew-amp-amp-cask" class="headerlink" title="brew &amp;&amp; cask"></a>brew &amp;&amp; cask</h2><h4 id="homebrew-官网是http-brew-sh"><a href="#homebrew-官网是http-brew-sh" class="headerlink" title="homebrew 官网是http://brew.sh/"></a>homebrew 官网是<a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a></h4><pre><code>ruby -e &quot;$(curl -fsSL &lt;a target=&quot;_blank&quot;&gt;https://raw.github.com/mxcl/homebrew/go&lt;/a&gt;)&quot;
-</code></pre><h4 id="cask"><a href="#cask" class="headerlink" title="cask"></a>cask</h4><pre><code>brew tap phinze/homebrew-cask &amp;&amp; brew install brew-cask
-</code></pre><h4 id="应用方式"><a href="#应用方式" class="headerlink" title="应用方式"></a>应用方式</h4><pre><code>brew cask install XXX
-brew cask search 列出所有可以被安装的软件
-brew cask search drop 查找所有和 drop 相关的应用
-brew cask info thunder 查看 迅雷 应用的信息，这货安装的可是最新版本的迅雷哦！
-brew cask uninstall qq 卸载 QQ
-brew update &amp;&amp; brew upgrade 更新所有应用程序
-</code></pre><h4 id="常用软件"><a href="#常用软件" class="headerlink" title="常用软件"></a>常用软件</h4><pre><code>文件检索工具 alfred
+        <h2 id="安装gulp"><a href="#安装gulp" class="headerlink" title="安装gulp"></a>安装gulp</h2><pre><code>npm install —-save gulp
+</code></pre><p>安装好gulp后我们需要告诉它要为我们执行哪些任务，首先，我们自己需要弄清楚项目需要哪些任务。</p>
+<p>1.检查Javascript<br>2.编译Sass（或Less之类的）文件<br>3.合并Javascript<br>4.压缩并重命名合并后的Javascript</p>
+<pre><code>npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev
+</code></pre><p>引入了核心的gulp和其他依赖组件gulpfile.js</p>
+<pre><code>// 引入 gulp
+var gulp = require(&apos;gulp&apos;);
+
+// 引入组件
+var jshint = require(&apos;gulp-jshint&apos;);
+var sass = require(&apos;gulp-sass&apos;);
+var concat = require(&apos;gulp-concat&apos;);
+var uglify = require(&apos;gulp-uglify&apos;);
+var rename = require(&apos;gulp-rename&apos;);
+
+// 检查脚本
+gulp.task(&apos;lint&apos;, function() {
+    gulp.src(&apos;./js/*.js&apos;)
+        .pipe(jshint())
+        .pipe(jshint.reporter(&apos;default&apos;));
+});
+
+// 编译Sass
+gulp.task(&apos;sass&apos;, function() {
+    gulp.src(&apos;./scss/*.scss&apos;)
+        .pipe(sass())
+        .pipe(gulp.dest(&apos;./css&apos;));
+});
+
+// 合并，压缩文件
+gulp.task(&apos;scripts&apos;, function() {
+    gulp.src(&apos;./js/*.js&apos;)
+        .pipe(concat(&apos;all.js&apos;))
+        .pipe(gulp.dest(&apos;./dist&apos;))
+        .pipe(rename(&apos;all.min.js&apos;))
+        .pipe(uglify())
+        .pipe(gulp.dest(&apos;./dist&apos;));
+});
+
+// 默认任务
+gulp.task(&apos;default&apos;, function(){
+    gulp.run(&apos;lint&apos;, &apos;sass&apos;, &apos;scripts&apos;);
+
+    // 监听文件变化
+    gulp.watch(&apos;./js/*.js&apos;, function(){
+        gulp.run(&apos;lint&apos;, &apos;sass&apos;, &apos;scripts&apos;);
+    });
+});
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yusishuma.github.io/Mac-OS/index.html" data-id="cja0sx2cn0003tbojs8yd8oyo" class="article-share-link">Share</a>
+      <a data-url="http://yusishuma.github.io/2017/11/15/Gulp/" data-id="cja0sx2cy0006tbojs8jv3vds" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2017/11/15/redis/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          redis
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/15/ElasticSearch-logstash-kibana/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ElasticSearch+logstash+kibana</div>
+    </a>
+  
+</nav>
+
   
 </article>
 

@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>YUSI</title>
+  <title>读取json文件 | YUSI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="你来到了没有知识的荒原 :(">
-<meta property="og:type" content="website">
-<meta property="og:title" content="YUSI">
-<meta property="og:url" content="http://yusishuma.github.io/404.html">
+  <meta name="description" content="##读取json文件 Parsing a string containing JSON data var str = &amp;apos;{ &amp;quot;name&amp;quot;: &amp;quot;John Doe&amp;quot;, &amp;quot;age&amp;quot;: 42 }&amp;apos;; var obj = JSON.parse(str); Parsing a file containing JSON data Y">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读取json文件">
+<meta property="og:url" content="http://yusishuma.github.io/2015/10/13/读取json文件/index.html">
 <meta property="og:site_name" content="YUSI">
-<meta property="og:description" content="你来到了没有知识的荒原 :(">
+<meta property="og:description" content="##读取json文件 Parsing a string containing JSON data var str = &amp;apos;{ &amp;quot;name&amp;quot;: &amp;quot;John Doe&amp;quot;, &amp;quot;age&amp;quot;: 42 }&amp;apos;; var obj = JSON.parse(str); Parsing a file containing JSON data Y">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-23T13:40:20.000Z">
+<meta property="og:updated_time" content="2017-11-15T08:23:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YUSI">
-<meta name="twitter:description" content="你来到了没有知识的荒原 :(">
+<meta name="twitter:title" content="读取json文件">
+<meta name="twitter:description" content="##读取json文件 Parsing a string containing JSON data var str = &amp;apos;{ &amp;quot;name&amp;quot;: &amp;quot;John Doe&amp;quot;, &amp;quot;age&amp;quot;: 42 }&amp;apos;; var obj = JSON.parse(str); Parsing a file containing JSON data Y">
   
   
     <link rel="icon" href="/favicon.png">
@@ -63,29 +63,87 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="404-undefined" class="article article-type-404" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-读取json文件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2017-11-15T06:18:42.000Z" itemprop="datePublished">2017-11-15</time>
+    <a href="/2015/10/13/读取json文件/" class="article-date">
+  <time datetime="2015-10-13T07:48:00.000Z" itemprop="datePublished">2015-10-13</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Nodejs/">Nodejs</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      读取json文件
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>##读取json文件</p>
+<p>Parsing a string containing JSON data</p>
+<pre><code>var str = &apos;{ &quot;name&quot;: &quot;John Doe&quot;, &quot;age&quot;: 42 }&apos;;
+var obj = JSON.parse(str);
+</code></pre><p>Parsing a file containing JSON data</p>
+<p>You’ll have to do some file operations with fs module:</p>
+<pre><code>var fs = require(&apos;fs&apos;);
+</code></pre><p>Then you can read the data asynchronously/synchronously.</p>
+<p>Asynchronous version</p>
+<pre><code>fs.readFile(&apos;/path/to/file.json&apos;, &apos;utf8&apos;, function (err, data) {
+if (err) throw err; // we&apos;ll not consider error handling for now
+var obj = JSON.parse(data);
+});
+</code></pre><p>Synchronous version</p>
+<pre><code>var json = JSON.parse(fs.readFileSync(&apos;/path/to/file.json&apos;, &apos;utf8&apos;));
+</code></pre><p>WARNING</p>
+<p>You can sometimes use require:</p>
+<pre><code>var obj = require(&apos;path/to/file.json&apos;);
+</code></pre><p>But, this is not recommended for several reasons:</p>
+<p>require will read the file only once. Subsequent calls to require for the same file will return a cached copy. Not a good idea if you want to read a .json file that is continuously updated.<br>If your file does not have a .json extension, require will not treat the contents of the file as JSON.<br>JSON is not a true subset of JavaScript. A user provided JSON string could crash your application. Seriously. Use JSON.parse with a try/catch block.<br>jsonfile module</p>
+<p>If you are reading large number of .json files, (and if you are extremely lazy), it becomes annoying to write boilerplate code every time. You can save some characters by using the jsonfile module.</p>
+<pre><code>var jf = require(&apos;jsonfile&apos;);
+
+// asynchronous version
+jf.readFile(&apos;/path/to/file.json&apos;, function(err, obj) {
+  // obj contains JSON data
+});
+
+// synchronous version
+var obj = jf.readFileSync(file);
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yusishuma.github.io/404.html" data-id="cja0sx2c60000tbojgv70f05y" class="article-share-link">Share</a>
+      <a data-url="http://yusishuma.github.io/2015/10/13/读取json文件/" data-id="cja0sx2cz0007tbojls04lga6" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2017/11/15/ElasticSearch-logstash-kibana/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ElasticSearch+logstash+kibana
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
