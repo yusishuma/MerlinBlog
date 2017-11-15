@@ -45,11 +45,11 @@
         
           <a class="main-nav-link" href="/archives">Archives</a>
         
-          <a class="main-nav-link" href="/About">About</a>
-        
           <a class="main-nav-link" href="/Mac-OS">Mac-OS</a>
         
           <a class="main-nav-link" href="/Liunx-OS">Liunx-OS</a>
+        
+          <a class="main-nav-link" href="/About">About</a>
         
       </nav>
       <nav id="sub-nav">
@@ -88,48 +88,13 @@
         <p>##nodejs版本控制</p>
 <p><em>一般有两种工具</em></p>
 <p>nvm与Python的virtualenv和Ruby的rvm类似。<br>NVM (Node Version Manager，Node多版本管理器)是一个通用的叫法,它目前有许多不同的实现。通常我们说的 nvm 是指 <a href="https://github.com/creationix/nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a> 或者 <a href="https://github.com/visionmedia/n" target="_blank" rel="external">https://github.com/visionmedia/n</a> 。这两个工具都是使用shell编写的。</p>
-<pre><code>安装
-如果已经安装了npm的话，可以直接执行命令进行安装n :
-
-$ npm install -g n
-或者是直接获取源代码安装：
-
-$ git clone https://github.com/visionmedia/n.git
-$ cd n
-$ [sudo] make install
-使用
-直接运行 n 命令查看所有已安装的版本。
-
-$ n
-运行命令 n 进行安装指定版本的node。 version 可以是 stable(最新稳定版)、latest(最新版)或者具体的版本数字。
-
-$ n stable
-install : v0.10.24
-mkdir : /usr/local/n/versions/0.10.24
-fetch : http://nodejs.org/dist/v0.10.24/node-v0.10.24-linux-x64.tar.gz
-指定的版本将会安装在 /usr/local/n/versions 目录下。
-
-运行命令 n rm 删除已安装指定版本的node。
-
-运行命令 n use 选择使用指定版本的node。
-</code></pre><p><a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a></p>
-<pre><code>常用命令
-`nvm install`
-`nvm ls-remote`
-If you want to use the system-installed version of node,   you can use the special default alias &quot;system&quot;:
-`nvm use system
-nvm run system --version`
-If you want to see what versions are installed:
-`nvm ls`
-If you want to see what versions are available to install:
-`nvm ls-remote`
-To restore your PATH, you can deactivate it.
-`nvm deactivate`
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">安装</span><br><span class="line">如果已经安装了npm的话，可以直接执行命令进行安装n :</span><br><span class="line"></span><br><span class="line">$ npm install -g n</span><br><span class="line">或者是直接获取源代码安装：</span><br><span class="line"></span><br><span class="line">$ git clone https://github.com/visionmedia/n.git</span><br><span class="line">$ cd n</span><br><span class="line">$ [sudo] make install</span><br><span class="line">使用</span><br><span class="line">直接运行 n 命令查看所有已安装的版本。</span><br><span class="line"></span><br><span class="line">$ n</span><br><span class="line">运行命令 n 进行安装指定版本的node。 version 可以是 stable(最新稳定版)、latest(最新版)或者具体的版本数字。</span><br><span class="line"></span><br><span class="line">$ n stable</span><br><span class="line">install : v0.10.24</span><br><span class="line">mkdir : /usr/local/n/versions/0.10.24</span><br><span class="line">fetch : http://nodejs.org/dist/v0.10.24/node-v0.10.24-linux-x64.tar.gz</span><br><span class="line">指定的版本将会安装在 /usr/local/n/versions 目录下。</span><br><span class="line"></span><br><span class="line">运行命令 n rm 删除已安装指定版本的node。</span><br><span class="line"></span><br><span class="line">运行命令 n use 选择使用指定版本的node。</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">常用命令</span><br><span class="line">`nvm install`</span><br><span class="line">`nvm ls-remote`</span><br><span class="line">If you want to use the system-installed version of node,   you can use the special default alias &quot;system&quot;:</span><br><span class="line">`nvm use system</span><br><span class="line">nvm run system --version`</span><br><span class="line">If you want to see what versions are installed:</span><br><span class="line">`nvm ls`</span><br><span class="line">If you want to see what versions are available to install:</span><br><span class="line">`nvm ls-remote`</span><br><span class="line">To restore your PATH, you can deactivate it.</span><br><span class="line">`nvm deactivate`</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/13/nodejs版本管理/" data-id="cja0q2hc00004noojirnha646" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/13/nodejs版本管理/" data-id="cja0rigcn0002fdojcjryj57b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -192,11 +157,11 @@ To restore your PATH, you can deactivate it.
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/About" class="mobile-nav-link">About</a>
-  
     <a href="/Mac-OS" class="mobile-nav-link">Mac-OS</a>
   
     <a href="/Liunx-OS" class="mobile-nav-link">Liunx-OS</a>
+  
+    <a href="/About" class="mobile-nav-link">About</a>
   
 </nav>
     
