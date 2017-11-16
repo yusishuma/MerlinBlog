@@ -395,10 +395,17 @@
       
         
           
-            <h4 id="启动redis显示中文"><a href="#启动redis显示中文" class="headerlink" title="启动redis显示中文"></a>启动redis显示中文</h4><pre><code>redis-cli   —raw  编码  十六进制转utf-8
-</code></pre><p><a href="http://www.runoob.com/redis/redis-backup.html" target="_blank" rel="external">文档</a></p>
+          启动redis显示中文redis-cli   —raw  编码  十六进制转utf-8
+文档
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/15/redis/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -538,56 +545,18 @@
       
         
           
-            <h2 id="安装gulp"><a href="#安装gulp" class="headerlink" title="安装gulp"></a>安装gulp</h2><pre><code>npm install —-save gulp
-</code></pre><p>安装好gulp后我们需要告诉它要为我们执行哪些任务，首先，我们自己需要弄清楚项目需要哪些任务。</p>
-<p>1.检查Javascript<br>2.编译Sass（或Less之类的）文件<br>3.合并Javascript<br>4.压缩并重命名合并后的Javascript</p>
-<pre><code>npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev
-</code></pre><p>引入了核心的gulp和其他依赖组件gulpfile.js</p>
-<pre><code>// 引入 gulp
-var gulp = require(&apos;gulp&apos;);
-
-// 引入组件
-var jshint = require(&apos;gulp-jshint&apos;);
-var sass = require(&apos;gulp-sass&apos;);
-var concat = require(&apos;gulp-concat&apos;);
-var uglify = require(&apos;gulp-uglify&apos;);
-var rename = require(&apos;gulp-rename&apos;);
-
-// 检查脚本
-gulp.task(&apos;lint&apos;, function() {
-    gulp.src(&apos;./js/*.js&apos;)
-        .pipe(jshint())
-        .pipe(jshint.reporter(&apos;default&apos;));
-});
-
-// 编译Sass
-gulp.task(&apos;sass&apos;, function() {
-    gulp.src(&apos;./scss/*.scss&apos;)
-        .pipe(sass())
-        .pipe(gulp.dest(&apos;./css&apos;));
-});
-
-// 合并，压缩文件
-gulp.task(&apos;scripts&apos;, function() {
-    gulp.src(&apos;./js/*.js&apos;)
-        .pipe(concat(&apos;all.js&apos;))
-        .pipe(gulp.dest(&apos;./dist&apos;))
-        .pipe(rename(&apos;all.min.js&apos;))
-        .pipe(uglify())
-        .pipe(gulp.dest(&apos;./dist&apos;));
-});
-
-// 默认任务
-gulp.task(&apos;default&apos;, function(){
-    gulp.run(&apos;lint&apos;, &apos;sass&apos;, &apos;scripts&apos;);
-
-    // 监听文件变化
-    gulp.watch(&apos;./js/*.js&apos;, function(){
-        gulp.run(&apos;lint&apos;, &apos;sass&apos;, &apos;scripts&apos;);
-    });
-});
-</code></pre>
-          
+          安装gulpnpm install —-save gulp
+安装好gulp后我们需要告诉它要为我们执行哪些任务，首先，我们自己需要弄清楚项目需要哪些任务。
+1.检查Javascript2.编译Sass（或Less之类的）文件3.合并Javascript4.压缩并重命名合并后的Javascript
+n
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/15/Gulp/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -705,57 +674,21 @@ gulp.task(&apos;default&apos;, function(){
       
         
           
-            <h2 id="elasticserach"><a href="#elasticserach" class="headerlink" title="elasticserach"></a>elasticserach</h2><p><a href="http://es.xiaoleilu.com/010_Intro/00_README.html" target="_blank" rel="external">权威指南中文版</a></p>
-<pre><code>一、配置elastic.yml
+          elasticserach权威指南中文版
+一、配置elastic.yml
 外网访问的时候要修改 network.host: 0.0.0.0 或指定访问地址
 
 
 二、安装IK分词插件
-假设读者已经安装好ES，如果没有的话，请参考ElasticSearch入门 —— 集群搭建。安装IK分词需要的资源可以从这里下载，整个安装过程需要三个步骤：
-1、获取分词的依赖包
-通过git clone https://github.com/medcl/elasticsearch-analysis-ik，下载分词器源码，然后进入下载目录，执行命令：mvn clean package，打包生成elasticsearch-analysis-ik-1.2.5.jar。将这个jar拷贝到ES_HOME/plugins/analysis-ik目录下面，如果没有该目录，则先创建该目录。
-2、ik目录拷贝
-将下载目录中的ik目录拷贝到ES_HOME/config目录下面。
-3、分词器配置
-    ES_HOME/config/elasticsearch.yml文件
-</code></pre><h4 id="don’t-run-elasticsearch-as-root"><a href="#don’t-run-elasticsearch-as-root" class="headerlink" title="don’t run elasticsearch as root."></a>don’t run elasticsearch as root.</h4><pre><code>linux下设置777权限和用户权限 (2012-10-15 04:41:38)转载▼
-标签： 杂谈    分类： 学习交流
-linux下设置777权限和用户权限
-设置www目录的所有文件可写777
-sudo chmod 777 -R www  (这里－R是继承)
-设置www目录下的所有文件权限为user所有
-sudo chown -hR user www
-exit
-</code></pre><h2 id="kibana-V4-3-版本"><a href="#kibana-V4-3-版本" class="headerlink" title="kibana V4.3 版本"></a>kibana V4.3 版本</h2><p><a href="http://www.code123.cc/docs/kibana-logstash/" target="_blank" rel="external">权威指南中文版</a></p>
-<pre><code>discover查询的时候注意右上角的时间范围设定
-</code></pre><h2 id="Logstash"><a href="#Logstash" class="headerlink" title="Logstash"></a>Logstash</h2><p><a href="http://udn.yyuap.com/doc/logstash-best-practice-cn" target="_blank" rel="external">权威指南中文版</a></p>
-<pre><code>input {
-file {
-    path =&gt; [&quot;/users/matonghe/yuanzi-api/logs/strategy*&quot;]
-    codec =&gt; &quot;json&quot;
-}
-}
-filter {
-   ruby {//ruby命令过滤字段
-    init =&gt; &quot;@kname = [&apos;strategy&apos;]&quot;//添加字段
-    code =&gt; &quot;event.append(Hash[@kname.zip(event[&apos;message&apos;].split(&apos; strategy - &apos;).drop(1))])&quot;//切除部分内容并给新增字段赋值
-}
-mutate {
-  remove_field =&gt; [&quot;message&quot;]//移除字段
-}
-json {
-  source =&gt; &quot;strategy&quot;//json化字段中内容
-}
-}
-
-output {
-elasticsearch {
-    hosts =&gt; [&quot;localhost:9200&quot;]
-}
-stdout {codec =&gt; rubydebug}
-}
-</code></pre>
-          
+假设读者已经安装好ES，如果没有的话，请参考ElasticSearch入门 —— 集群搭建。安装IK分词需要的资源可以
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/15/ElasticSearch-logstash-kibana/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -895,38 +828,18 @@ stdout {codec =&gt; rubydebug}
       
         
           
-            <p>##读取json文件</p>
-<p>Parsing a string containing JSON data</p>
-<pre><code>var str = &apos;{ &quot;name&quot;: &quot;John Doe&quot;, &quot;age&quot;: 42 }&apos;;
-var obj = JSON.parse(str);
-</code></pre><p>Parsing a file containing JSON data</p>
-<p>You’ll have to do some file operations with fs module:</p>
-<pre><code>var fs = require(&apos;fs&apos;);
-</code></pre><p>Then you can read the data asynchronously/synchronously.</p>
-<p>Asynchronous version</p>
-<pre><code>fs.readFile(&apos;/path/to/file.json&apos;, &apos;utf8&apos;, function (err, data) {
-if (err) throw err; // we&apos;ll not consider error handling for now
-var obj = JSON.parse(data);
-});
-</code></pre><p>Synchronous version</p>
-<pre><code>var json = JSON.parse(fs.readFileSync(&apos;/path/to/file.json&apos;, &apos;utf8&apos;));
-</code></pre><p>WARNING</p>
-<p>You can sometimes use require:</p>
-<pre><code>var obj = require(&apos;path/to/file.json&apos;);
-</code></pre><p>But, this is not recommended for several reasons:</p>
-<p>require will read the file only once. Subsequent calls to require for the same file will return a cached copy. Not a good idea if you want to read a .json file that is continuously updated.<br>If your file does not have a .json extension, require will not treat the contents of the file as JSON.<br>JSON is not a true subset of JavaScript. A user provided JSON string could crash your application. Seriously. Use JSON.parse with a try/catch block.<br>jsonfile module</p>
-<p>If you are reading large number of .json files, (and if you are extremely lazy), it becomes annoying to write boilerplate code every time. You can save some characters by using the jsonfile module.</p>
-<pre><code>var jf = require(&apos;jsonfile&apos;);
-
-// asynchronous version
-jf.readFile(&apos;/path/to/file.json&apos;, function(err, obj) {
-  // obj contains JSON data
-});
-
-// synchronous version
-var obj = jf.readFileSync(file);
-</code></pre>
-          
+          ##读取json文件
+Parsing a string containing JSON data
+var str = &apos;{ &quot;name&quot;: &quot;John Doe&quot;, &quot;age&quot;: 42 }&apos;;
+var obj = JSON
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/10/13/读取json文件/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1172,18 +1085,9 @@ var obj = jf.readFileSync(file);
 
 
 
-  
-  
 
 
 
-  
-  
-
-
-
-  
-  
 
 
 
@@ -1211,18 +1115,6 @@ var obj = jf.readFileSync(file);
 
   
   <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
 
   
   <script type="text/javascript" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
