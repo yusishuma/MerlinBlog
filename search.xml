@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[redis]]></title>
+    <url>%2F2017%2F11%2F15%2Fredis%2F</url>
+    <content type="text"><![CDATA[启动redis显示中文redis-cli —raw 编码 十六进制转utf-8 文档]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Gulp]]></title>
+    <url>%2F2017%2F11%2F15%2FGulp%2F</url>
+    <content type="text"><![CDATA[安装gulpnpm install —-save gulp 安装好gulp后我们需要告诉它要为我们执行哪些任务，首先，我们自己需要弄清楚项目需要哪些任务。 1.检查Javascript2.编译Sass（或Less之类的）文件3.合并Javascript4.压缩并重命名合并后的Javascript npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev 引入了核心的gulp和其他依赖组件gulpfile.js // 引入 gulp var gulp = require(&apos;gulp&apos;); // 引入组件 var jshint = require(&apos;gulp-jshint&apos;); var sass = require(&apos;gulp-sass&apos;); var concat = require(&apos;gulp-concat&apos;); var uglify = require(&apos;gulp-uglify&apos;); var rename = require(&apos;gulp-rename&apos;); // 检查脚本 gulp.task(&apos;lint&apos;, function() { gulp.src(&apos;./js/*.js&apos;) .pipe(jshint()) .pipe(jshint.reporter(&apos;default&apos;)); }); // 编译Sass gulp.task(&apos;sass&apos;, function() { gulp.src(&apos;./scss/*.scss&apos;) .pipe(sass()) .pipe(gulp.dest(&apos;./css&apos;)); }); // 合并，压缩文件 gulp.task(&apos;scripts&apos;, function() { gulp.src(&apos;./js/*.js&apos;) .pipe(concat(&apos;all.js&apos;)) .pipe(gulp.dest(&apos;./dist&apos;)) .pipe(rename(&apos;all.min.js&apos;)) .pipe(uglify()) .pipe(gulp.dest(&apos;./dist&apos;)); }); // 默认任务 gulp.task(&apos;default&apos;, function(){ gulp.run(&apos;lint&apos;, &apos;sass&apos;, &apos;scripts&apos;); // 监听文件变化 gulp.watch(&apos;./js/*.js&apos;, function(){ gulp.run(&apos;lint&apos;, &apos;sass&apos;, &apos;scripts&apos;); }); });]]></content>
+      <categories>
+        <category>Nodejs</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ElasticSearch+logstash+kibana]]></title>
+    <url>%2F2017%2F11%2F15%2FElasticSearch-logstash-kibana%2F</url>
+    <content type="text"><![CDATA[elasticserach权威指南中文版 一、配置elastic.yml 外网访问的时候要修改 network.host: 0.0.0.0 或指定访问地址 二、安装IK分词插件 假设读者已经安装好ES，如果没有的话，请参考ElasticSearch入门 —— 集群搭建。安装IK分词需要的资源可以从这里下载，整个安装过程需要三个步骤： 1、获取分词的依赖包 通过git clone https://github.com/medcl/elasticsearch-analysis-ik，下载分词器源码，然后进入下载目录，执行命令：mvn clean package，打包生成elasticsearch-analysis-ik-1.2.5.jar。将这个jar拷贝到ES_HOME/plugins/analysis-ik目录下面，如果没有该目录，则先创建该目录。 2、ik目录拷贝 将下载目录中的ik目录拷贝到ES_HOME/config目录下面。 3、分词器配置 ES_HOME/config/elasticsearch.yml文件 don’t run elasticsearch as root.linux下设置777权限和用户权限 (2012-10-15 04:41:38)转载▼ 标签： 杂谈 分类： 学习交流 linux下设置777权限和用户权限 设置www目录的所有文件可写777 sudo chmod 777 -R www (这里－R是继承) 设置www目录下的所有文件权限为user所有 sudo chown -hR user www exit kibana V4.3 版本权威指南中文版 discover查询的时候注意右上角的时间范围设定 Logstash权威指南中文版 input { file { path =&gt; [&quot;/users/matonghe/yuanzi-api/logs/strategy*&quot;] codec =&gt; &quot;json&quot; } } filter { ruby {//ruby命令过滤字段 init =&gt; &quot;@kname = [&apos;strategy&apos;]&quot;//添加字段 code =&gt; &quot;event.append(Hash[@kname.zip(event[&apos;message&apos;].split(&apos; strategy - &apos;).drop(1))])&quot;//切除部分内容并给新增字段赋值 } mutate { remove_field =&gt; [&quot;message&quot;]//移除字段 } json { source =&gt; &quot;strategy&quot;//json化字段中内容 } } output { elasticsearch { hosts =&gt; [&quot;localhost:9200&quot;] } stdout {codec =&gt; rubydebug} }]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[读取json文件]]></title>
+    <url>%2F2015%2F10%2F13%2F%E8%AF%BB%E5%8F%96json%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[##读取json文件 Parsing a string containing JSON data var str = &apos;{ &quot;name&quot;: &quot;John Doe&quot;, &quot;age&quot;: 42 }&apos;; var obj = JSON.parse(str); Parsing a file containing JSON data You’ll have to do some file operations with fs module: var fs = require(&apos;fs&apos;); Then you can read the data asynchronously/synchronously. Asynchronous version fs.readFile(&apos;/path/to/file.json&apos;, &apos;utf8&apos;, function (err, data) { if (err) throw err; // we&apos;ll not consider error handling for now var obj = JSON.parse(data); }); Synchronous version var json = JSON.parse(fs.readFileSync(&apos;/path/to/file.json&apos;, &apos;utf8&apos;)); WARNING You can sometimes use require: var obj = require(&apos;path/to/file.json&apos;); But, this is not recommended for several reasons: require will read the file only once. Subsequent calls to require for the same file will return a cached copy. Not a good idea if you want to read a .json file that is continuously updated.If your file does not have a .json extension, require will not treat the contents of the file as JSON.JSON is not a true subset of JavaScript. A user provided JSON string could crash your application. Seriously. Use JSON.parse with a try/catch block.jsonfile module If you are reading large number of .json files, (and if you are extremely lazy), it becomes annoying to write boilerplate code every time. You can save some characters by using the jsonfile module. var jf = require(&apos;jsonfile&apos;); // asynchronous version jf.readFile(&apos;/path/to/file.json&apos;, function(err, obj) { // obj contains JSON data }); // synchronous version var obj = jf.readFileSync(file);]]></content>
+      <categories>
+        <category>Nodejs</category>
+      </categories>
+  </entry>
+</search>

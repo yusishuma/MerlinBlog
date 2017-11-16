@@ -45,6 +45,32 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
@@ -74,7 +100,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="YUSI·Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="YUSI—Blog" type="application/atom+xml" />
 
 
 
@@ -85,7 +111,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="读取json文件">
 <meta property="og:url" content="http://yusishuma.github.io/2015/10/13/读取json文件/index.html">
-<meta property="og:site_name" content="YUSI·Blog">
+<meta property="og:site_name" content="YUSI—Blog">
 <meta property="og:description" content="##读取json文件 Parsing a string containing JSON data var str = &amp;apos;{ &amp;quot;name&amp;quot;: &amp;quot;John Doe&amp;quot;, &amp;quot;age&amp;quot;: 42 }&amp;apos;; var obj = JSON.parse(str); Parsing a file containing JSON data Y">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-11-15T08:23:40.000Z">
@@ -110,9 +136,9 @@
       author: '博主'
     },
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'DFGF8VV0YT',
+      apiKey: '07787abd8b8512808e6fea11e74a334a',
+      indexName: 'prod_name',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -127,7 +153,7 @@
 
 
 
-  <title>读取json文件 | YUSI·Blog</title>
+  <title>读取json文件 | YUSI—Blog</title>
   
 
 
@@ -157,7 +183,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">YUSI·Blog</span>
+        <span class="site-title">YUSI—Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -307,7 +333,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YUSI·Blog">
+      <meta itemprop="name" content="YUSI—Blog">
     </span>
 
     
@@ -363,22 +389,16 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2015/10/13/读取json文件/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/10/13/读取json文件/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
@@ -438,6 +458,30 @@ var obj = jf.readFileSync(file);
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="聪明的沙丁鱼 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -479,6 +523,29 @@ var obj = jf.readFileSync(file);
 
     <div class="post-spread">
       
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_weixin"></a>
+<a class="jiathis_button_cqq"></a>
+<a class="jiathis_button_fav"></a>
+<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	summary:"聪明的沙丁鱼",
+	ralateuid:{
+		"tsina":"2526135135"
+	},
+	shortUrl:false,
+	hideMore:true
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
     </div>
   </div>
 
@@ -490,12 +557,7 @@ var obj = jf.readFileSync(file);
           
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTg1Ny84NDIx"></div>
     </div>
   
 
@@ -638,6 +700,26 @@ var obj = jf.readFileSync(file);
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -774,26 +856,6 @@ var obj = jf.readFileSync(file);
 
   
 
-    
-      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yusishuma.github.io/2015/10/13/读取json文件/';
-          this.page.identifier = '2015/10/13/读取json文件/';
-          this.page.title = '读取json文件';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
 
 
 
@@ -810,6 +872,17 @@ var obj = jf.readFileSync(file);
 
 
   
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
 
 
 
@@ -825,7 +898,7 @@ var obj = jf.readFileSync(file);
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "";
+    var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1144,6 +1217,21 @@ var obj = jf.readFileSync(file);
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
